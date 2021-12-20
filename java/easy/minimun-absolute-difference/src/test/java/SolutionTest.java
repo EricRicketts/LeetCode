@@ -19,12 +19,22 @@ class SolutionTest {
     }
 
     @Test
-    public void minimumAbsDifference() {
+    public void minimumAbsDifferenceAllPositives() {
         Integer[][] expectedArray = new Integer[][]{{1, 2}, {2, 3}, {3, 4}};
         for (Integer[] subArray:expectedArray) {
             expected.add(Arrays.asList(subArray));
         }
         int[] inputArray = new int[]{4, 2, 1, 3};
+        assertEquals(expected, solution.minimumAbsDifference(inputArray));
+    }
+
+    @Test
+    public void minimumAbsDifferenceOneResult() {
+        Integer[][] expectedArray = new Integer[][]{{1, 3}};
+        for (Integer[] subArray:expectedArray) {
+            expected.add(Arrays.asList(subArray));
+        }
+        int[] inputArray = new int[]{1,3,6,10,15};
         assertEquals(expected, solution.minimumAbsDifference(inputArray));
     }
 }
