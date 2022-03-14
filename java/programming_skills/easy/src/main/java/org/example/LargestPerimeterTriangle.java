@@ -6,7 +6,8 @@ public class LargestPerimeterTriangle {
         int numberOfSides = nums.length;
         while (index < numberOfSides) {
             if (index == 0) {
-
+                longest = nums[index];
+            } else if (index == 1) {
             }
         }
         return perimeter;
