@@ -49,3 +49,13 @@ public class FindNearestPoint {
         this.getCurrentPoint().put("index", index);
     }
 }
+/*
+    Algorithm
+    1.  We cycle through the array.
+    2.  We grab the current coordinate from the array of points.
+    3.  if the point is not a near point then we go to the next point.
+    4.  If the point is a near point:
+        1.  If there are no points stored, store the point
+        2.  If there is an existing point stored, compare the Manhattan distances, if the new point has a smaller
+        distance then overwrite the current point, if not leave the current point alone.
+*/
