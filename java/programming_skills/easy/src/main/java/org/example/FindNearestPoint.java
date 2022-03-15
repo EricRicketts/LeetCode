@@ -22,7 +22,7 @@ public class FindNearestPoint {
             int yCoord = coords[1];
             if ((x == xCoord || y == yCoord)) {
                 int distance = this.calculateDistance(x, y, xCoord, yCoord);
-                if (!checkForExistingPoint()) {
+                if (this.checkForNoPoint()) {
                     this.setNewPoint(xCoord, yCoord, distance, index);
                 } else {
                     if ((Integer)this.getCurrentPoint().get("distance") > distance) {
@@ -31,16 +31,16 @@ public class FindNearestPoint {
                 }
             }
         }
-        return !this.checkForExistingPoint() ? -1 : (int) this.getCurrentPoint().get("index");
+        return this.checkForNoPoint() ? -1 : (int) this.getCurrentPoint().get("index");
     }
 
     private int calculateDistance(int x, int y, int xCoord, int yCoord) {
         return (int)(Math.abs(xCoord - x) + Math.abs(yCoord - y));
     }
 
-    private boolean checkForExistingPoint() {
+    private boolean checkForNoPoint() {
         Integer[] coords = (Integer[]) this.getCurrentPoint().get("coords");
-        return coords[0] != 0 && coords[1] != 0;
+        return coords[0] == 0 && coords[1] == 0;
     }
 
     private void setNewPoint(int xCoord, int yCoord, int distance, int index) {
