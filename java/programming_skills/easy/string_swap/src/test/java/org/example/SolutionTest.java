@@ -15,24 +15,55 @@ public class SolutionTest {
         solution = new Solution();
     }
 
-    @Disabled
+//    @Disabled
     @Test
     public void testValidSwapCase() {
         targetWord = "bank"; word = "kanb";
         assertTrue(solution.areAlmostEqual(targetWord, word));
     }
 
-    @Disabled
+    //    @Disabled
+    @Test
+    public void testValidSwapCaseInnerLettersBiggerWord() {
+        targetWord = "foobarfizzbuzz"; word = "foofarbizzbuzz";
+        assertTrue(solution.areAlmostEqual(targetWord, word));
+    }
+
+//    @Disabled
     @Test
     public void testSameWords() {
         targetWord = "kelb"; word = "kelb";
         assertTrue(solution.areAlmostEqual(targetWord, word));
     }
 
-    @Disabled
+//    @Disabled
     @Test
     public void testInvalidSwapCase() {
         targetWord = "attack"; word = "defend";
         assertFalse(solution.areAlmostEqual(targetWord, word));
+    }
+
+//    @Disabled
+    @Test
+    public void testOneLetterStringsTheSame() {
+        assertTrue(solution.areAlmostEqual("a", "a"));
+    }
+
+//    @Disabled
+    @Test
+    public void testOneLetterStringsAreDifferent() {
+        assertFalse(solution.areAlmostEqual("a", "b"));
+    }
+
+//    @Disabled
+    @Test
+    public void testTwoLetterStringsAreTheSame() {
+        assertTrue(solution.areAlmostEqual("ab", "ba"));
+    }
+
+//    @Disabled
+    @Test
+    public void testTwoLetterStringsAreDifferent() {
+        assertFalse(solution.areAlmostEqual("ab", "zx"));
     }
 }
