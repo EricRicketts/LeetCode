@@ -8,18 +8,27 @@ import org.junit.jupiter.api.Test;
 public class SolutionTest {
 
     Solution solution;
-    String[] s;
-    String[] expected;
+    char[] s;
+    char[] expected;
     @BeforeEach
     public void setUp() {
         solution = new Solution();
     }
 
     @Test
-    public void shouldAnswerWithTrue() {
-        s = new String[]{"h","e","l","l","o"};
-        expected = new String[]{"o","l","l","e","h"};
-        assertArrayEquals(expected);
+    public void testReverseOddSizedArray() {
+        s = new char[]{'h','e','l','l','o'};
+        expected = new char[]{'o','l','l','e','h'};
+        solution.reverseString(s);
+        assertArrayEquals(expected, s);
+    }
+
+    @Test
+    public void testReverseEvenSizedArray() {
+        s = new char[]{'f','o','o','b','a', 'r'};
+        expected = new char[]{'r','a','b', 'o', 'o','f'};
+        solution.reverseString(s);
+        assertArrayEquals(expected, s);
     }
 
 }
