@@ -22,7 +22,7 @@ public class SolutionTest {
         expected = "bacdfeg";
         inputStr = "abcdefg";
         k = 2;
-        results = app.reverseString(inputStr, k);
+        results = app.reverseStr(inputStr, k);
         assertEquals(expected, results);
     }
 
@@ -31,7 +31,7 @@ public class SolutionTest {
         expected = "bacdfeghjiklnmop";
         inputStr = "abcdefghijklmnop";
         k = 2;
-        results = app.reverseString(inputStr, k);
+        results = app.reverseStr(inputStr, k);
         assertEquals(expected, results);
     }
 
@@ -40,7 +40,7 @@ public class SolutionTest {
         expected = "cbadefihgjklonmpq";
         inputStr = "abcdefghijklmnopq";
         k = 3;
-        results = app.reverseString(inputStr, k);
+        results = app.reverseStr(inputStr, k);
         assertEquals(expected, results);
     }
 
@@ -49,7 +49,7 @@ public class SolutionTest {
         expected = "cba";
         inputStr = "abc";
         k = 4;
-        results = app.reverseString(inputStr, k);
+        results = app.reverseStr(inputStr, k);
         assertEquals(expected, results);
     }
 
@@ -58,7 +58,16 @@ public class SolutionTest {
         expected = "abcdef";
         inputStr = "abcdef";
         k = 1;
-        results = app.reverseString(inputStr, k);
+        results = app.reverseStr(inputStr, k);
+        assertEquals(expected, results);
+    }
+
+    @Test
+    public void testFirstFailFromLeetCodeSubmission() {
+        expected = "cbadefg";
+        inputStr = "abcdefg";
+        k = 3;
+        results = app.reverseStr(inputStr, k);
         assertEquals(expected, results);
     }
 }
